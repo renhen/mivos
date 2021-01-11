@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_viewGoods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewGoodsClicked"
+            android:text="@string/btn_viewGoods" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_reception"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addReceptionClicked"
+            android:text="@string/btn_reception" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_prescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="prescriptionClicked"
+            android:text="@string/btn_prescription" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_mapsOpticalShop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mapViewClicked"
+            android:text="@string/btn_mapsOpticalShop" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_editUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="editUserClicked"
+            android:text="@string/btn_editUser" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="logoutClicked"
+            android:text="@string/btn_logout" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
