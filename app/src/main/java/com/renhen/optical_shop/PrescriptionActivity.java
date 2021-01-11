@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.renhen.optical_shop.adapter.PrescriptionAdapter;
 import com.renhen.optical_shop.data.OpticalShopDBHelper;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PrescriptionActivity extends AppCompatActivity {
 

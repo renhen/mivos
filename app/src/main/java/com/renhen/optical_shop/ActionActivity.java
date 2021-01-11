@@ -51,5 +51,7 @@ public class ActionActivity extends AppCompatActivity {
 
     public void viewGoodsClicked(View view)
     {
+        Intent intent = new Intent(this, GoodsActivity.class);
+        startActivity(intent);
     }
 }

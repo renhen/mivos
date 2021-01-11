@@ -1,4 +1,4 @@
-package com.renhen.optical_shop;
+package com.renhen.optical_shop.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.renhen.optical_shop.R;
 import com.renhen.optical_shop.data.OpticalShopContract;
 import com.renhen.optical_shop.data.OpticalShopDBHelper;
 import com.renhen.optical_shop.PrescriptionActivity;
