@@ -17,4 +17,5 @@
     <string name="label_inputpassword">Введите пароль</string>
     <string name="label_inputBirthdate">Введите дату рождения</string>
     <string name="label_inputPhone">Введите номер телефона</string>
+    <string name="btn_continueRegistration">Сохранить изменения</string>
 </resources>

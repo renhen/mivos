@@ -8,11 +8,15 @@ import android.view.View;
 
 public class ActionActivity extends AppCompatActivity {
 
+    private String currentID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action);
+        Intent intent = getIntent();
+        currentID = intent.getExtras().get("id").toString();
     }
 
 
@@ -24,6 +28,9 @@ public class ActionActivity extends AppCompatActivity {
 
     public void editUserClicked(View view)
     {
+        Intent intent = new Intent(this,EditProfileActivity.class);
+        intent.putExtra("id", currentID);
+        startActivity(intent);
     }
 
     public void mapViewClicked(View view)

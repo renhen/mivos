@@ -64,32 +64,53 @@ public class RegistrationActivity extends AppCompatActivity {
     };
 
     public void continueRegClicked(View view) {
-        String[] parse_date = line_birthdate.getText().toString().split("\\.");
-        String date = parse_date[2] + parse_date[1] + parse_date[0];
-        String login = line_login.getText().toString();
-        String password = line_password.getText().toString();
-        String name = line_name.getText().toString();
-        String phone = line_phone.getText().toString();
-
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(UserEntry.COLUMN_FIO,name);
-        values.put(UserEntry.COLUMN_LOGIN,login);
-        values.put(UserEntry.COLUMN_PASSWORD, password);
-        values.put(UserEntry.COLUMN_BIRTHDATE, date);
-        values.put(UserEntry.COLUMN_PHONE, phone);
-
-        long id = db.insert(UserEntry.TABLE_NAME,null,values);
-        if (id == -1){
-            Toast toast = Toast.makeText(this, "Логин уже существует",Toast.LENGTH_SHORT);
+        if (line_password.getText().toString().isEmpty()){
+            Toast toast = Toast.makeText(this, "Вы не ввели пароль",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if (line_login.toString().isEmpty()){
+            Toast toast = Toast.makeText(this, "Вы не ввели логин",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if (line_phone.toString().isEmpty()){
+            Toast toast = Toast.makeText(this, "Вы не ввели номер телефона",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if (line_name.toString().isEmpty()){
+            Toast toast = Toast.makeText(this, "Вы не ввели имя",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if (line_birthdate.toString().isEmpty()){
+            Toast toast = Toast.makeText(this, "Вы не ввели дату рождения",Toast.LENGTH_SHORT);
             toast.show();
         }
         else {
-            Intent intent = new Intent(this, ActionActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            intent.putExtra("id", id);
-            finish();
-            startActivity(intent);
+            String date = line_birthdate.getText().toString();
+            String login = line_login.getText().toString();
+            String password = line_password.getText().toString();
+            String name = line_name.getText().toString();
+            String phone = line_phone.getText().toString();
+
+            SQLiteDatabase db = mDbHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(UserEntry.COLUMN_FIO,name);
+            values.put(UserEntry.COLUMN_LOGIN,login);
+            values.put(UserEntry.COLUMN_PASSWORD, password);
+            values.put(UserEntry.COLUMN_BIRTHDATE, date);
+            values.put(UserEntry.COLUMN_PHONE, phone);
+
+            long id = db.insert(UserEntry.TABLE_NAME,null,values);
+            if (id == -1){
+                Toast toast = Toast.makeText(this, "Логин уже существует",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else {
+                Intent intent = new Intent(this, ActionActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.putExtra("id", id);
+                finish();
+                startActivity(intent);
+            }
         }
 
     }
