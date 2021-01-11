@@ -22,26 +22,29 @@ public class ActionActivity extends AppCompatActivity {
 
     public void logoutClicked(View view)
     {
-
         finish();
     }
 
     public void editUserClicked(View view)
     {
-        Intent intent = new Intent(this,EditProfileActivity.class);
+        Intent intent = new Intent(this, EditProfileActivity.class);
         intent.putExtra("id", currentID);
         startActivity(intent);
     }
 
     public void mapViewClicked(View view)
     {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
     public void prescriptionClicked(View view)
     {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
-    public void addReceptionClicked(View view)
+    public void receptionClicked(View view)
     {
     }
 

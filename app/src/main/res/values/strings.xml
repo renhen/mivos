@@ -9,7 +9,7 @@
     <string name="btn_login">Войти</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_viewGoods">Посмотреть товары в салоне оптики</string>
-    <string name="btn_reception">Записаться на прием</string>
+    <string name="btn_reception"> Прием</string>
     <string name="btn_prescription">Посмотреть выданные рецепты</string>
     <string name="btn_mapsOpticalShop">Показать салоны оптики на карте</string>
     <string name="btn_editUser">Редактировать информацию о себе</string>
@@ -18,4 +18,5 @@
     <string name="label_inputBirthdate">Введите дату рождения</string>
     <string name="label_inputPhone">Введите номер телефона</string>
     <string name="btn_continueRegistration">Сохранить изменения</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

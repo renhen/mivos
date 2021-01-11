@@ -34,7 +34,7 @@
             android:id="@+id/btn_reception"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="addReceptionClicked"
+            android:onClick="receptionClicked"
             android:text="@string/btn_reception" />
 
         <Space
