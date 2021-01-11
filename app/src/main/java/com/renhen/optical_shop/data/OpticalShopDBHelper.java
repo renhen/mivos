@@ -12,7 +12,7 @@ import com.renhen.optical_shop.data.OpticalShopContract.*;
 public class OpticalShopDBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME    = "opticalshop.db";
-    private static final int    DATABASE_VERSION = 3;
+    private static final int    DATABASE_VERSION = 4;
 
 
     public OpticalShopDBHelper(@Nullable Context context) {
@@ -147,8 +147,12 @@ public class OpticalShopDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+OpticalShopEntry.TABLE_NAME);
-        onCreate(db);
+        //db.execSQL("DROP TABLE IF EXISTS "+OpticalShopEntry.TABLE_NAME);
+        //onCreate(db);
+        db.execSQL("INSERT INTO " + PrescriptionEntry.TABLE_NAME +
+                "( " + PrescriptionEntry.COLUMN_NUMBER + "," + PrescriptionEntry.COLUMN_DETAIL + "," + PrescriptionEntry.COLUMN_DURATION + "," + PrescriptionEntry.COLUMN_FK_RECEPTION + " ) " +
+                "VALUES (41,'бифокальные линзы -4,25 левый +5, 25 правый','1 год', 1);");
+
     }
 
     private void insertValue(SQLiteDatabase db) {

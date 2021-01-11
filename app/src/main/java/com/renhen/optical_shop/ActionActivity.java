@@ -40,7 +40,8 @@ public class ActionActivity extends AppCompatActivity {
 
     public void prescriptionClicked(View view)
     {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, PrescriptionActivity.class);
+        intent.putExtra("id", currentID);
         startActivity(intent);
     }
 
