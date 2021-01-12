@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddReceptionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выберите услугу" />
+
+        <Spinner
+            android:id="@+id/spinner_service_addReception"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выберите врача" />
+
+        <Spinner
+            android:id="@+id/spinner_doctor_addReception"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/label100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выберите дату и время" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTextDate_addReception"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName" />
+
+            <ImageButton
+                android:id="@+id/btn_selectDateTime_addReception"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:onClick="dateClicked"
+                app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_address_addReception"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Адрес салона оптики: " />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <Button
+            android:id="@+id/button_addReception_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addReceptionItem"
+            android:text="Записаться на прием" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

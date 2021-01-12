@@ -23,6 +23,7 @@
             android:id="@+id/btn_addReceprion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="addReception"
             android:text="Записаться на прием" />
 
         <Space
@@ -43,7 +44,8 @@
         <ListView
             android:id="@+id/listView_futureReception"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="#8BC34A" />
 
         <Space
             android:layout_width="match_parent"
@@ -63,7 +65,8 @@
         <ListView
             android:id="@+id/listView_pastReception"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="#45FF1744" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ import com.renhen.optical_shop.data.OpticalShopContract.*;
 public class OpticalShopDBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME    = "opticalshop.db";
-    private static final int    DATABASE_VERSION = 4;
+    private static final int    DATABASE_VERSION = 5;
 
 
     public OpticalShopDBHelper(@Nullable Context context) {
@@ -149,9 +149,6 @@ public class OpticalShopDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //db.execSQL("DROP TABLE IF EXISTS "+OpticalShopEntry.TABLE_NAME);
         //onCreate(db);
-        db.execSQL("INSERT INTO " + PrescriptionEntry.TABLE_NAME +
-                "( " + PrescriptionEntry.COLUMN_NUMBER + "," + PrescriptionEntry.COLUMN_DETAIL + "," + PrescriptionEntry.COLUMN_DURATION + "," + PrescriptionEntry.COLUMN_FK_RECEPTION + " ) " +
-                "VALUES (41,'бифокальные линзы -4,25 левый +5, 25 правый','1 год', 1);");
 
     }
 
@@ -232,7 +229,7 @@ public class OpticalShopDBHelper extends SQLiteOpenHelper {
                 "( " + ReceptionEntry.COLUMN_DATETIME + "," + ReceptionEntry.COLUMN_FK_USER + "," + ReceptionEntry.COLUMN_FK_DOCTOR + " )"+
                 "VALUES(20201120183000,1,2), "+
                 "(20201203103000,1,1), "+
-                "(20210223,1,5);");
+                "(20210223140000,1,5);");
 
         db.execSQL("INSERT INTO " + PrescriptionEntry.TABLE_NAME +
                 "( " + PrescriptionEntry.COLUMN_NUMBER + "," + PrescriptionEntry.COLUMN_DETAIL + "," + PrescriptionEntry.COLUMN_DURATION + "," + PrescriptionEntry.COLUMN_FK_RECEPTION + " ) " +
@@ -272,7 +269,7 @@ public class OpticalShopDBHelper extends SQLiteOpenHelper {
                 "(1,3), " +
                 "(2,1), " +
                 "(2,5), " +
-                "(2,1), " +
+                "(2,6), " +
                 "(3,2), " +
                 "(3,3), " +
                 "(3,7), " +

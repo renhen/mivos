@@ -1,9 +1,7 @@
 package com.renhen.optical_shop.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +12,6 @@ import androidx.annotation.NonNull;
 
 import com.renhen.optical_shop.R;
 import com.renhen.optical_shop.data.OpticalShopContract;
-import com.renhen.optical_shop.data.OpticalShopDBHelper;
-import com.renhen.optical_shop.PrescriptionActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

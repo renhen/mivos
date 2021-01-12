@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void loginClicked(View view) {
 
-        // Проверка входных данных
         if (lineLogin.getText().toString().isEmpty())
         {
             Toast toast = Toast.makeText(this, "Вы не ввели логин",Toast.LENGTH_SHORT);
@@ -48,14 +47,11 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Вы не ввели пароль",Toast.LENGTH_SHORT);
             toast.show();
         }
-        // Действия для перехода
         else
         {
             SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
-            String[] projection = {
-                    UserEntry._ID
-            };
+            String[] projection = { UserEntry._ID };
 
             String selection = UserEntry.COLUMN_LOGIN + " = ? AND " + UserEntry.COLUMN_PASSWORD + "= ?";
             String[] selectionArgs = {lineLogin.getText().toString(), linePass.getText().toString()};
