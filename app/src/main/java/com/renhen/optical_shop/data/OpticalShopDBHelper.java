@@ -272,7 +272,7 @@ public class OpticalShopDBHelper extends SQLiteOpenHelper {
                 "(1,3), " +
                 "(2,1), " +
                 "(2,5), " +
-                "(2,11), " +
+                "(2,1), " +
                 "(3,2), " +
                 "(3,3), " +
                 "(3,7), " +

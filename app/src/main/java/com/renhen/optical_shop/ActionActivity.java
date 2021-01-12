@@ -8,7 +8,7 @@ import android.view.View;
 
 public class ActionActivity extends AppCompatActivity {
 
-    private String currentID;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -16,7 +16,7 @@ public class ActionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action);
         Intent intent = getIntent();
-        currentID = intent.getExtras().get("id").toString();
+        userID = intent.getExtras().get("id").toString();
     }
 
 
@@ -28,7 +28,7 @@ public class ActionActivity extends AppCompatActivity {
     public void editUserClicked(View view)
     {
         Intent intent = new Intent(this, EditProfileActivity.class);
-        intent.putExtra("id", currentID);
+        intent.putExtra("id", userID);
         startActivity(intent);
     }
 
@@ -41,12 +41,15 @@ public class ActionActivity extends AppCompatActivity {
     public void prescriptionClicked(View view)
     {
         Intent intent = new Intent(this, PrescriptionActivity.class);
-        intent.putExtra("id", currentID);
+        intent.putExtra("id", userID);
         startActivity(intent);
     }
 
     public void receptionClicked(View view)
     {
+        Intent intent = new Intent(this, ReceptionActivity.class);
+        intent.putExtra("id", userID);
+        startActivity(intent);
     }
 
     public void viewGoodsClicked(View view)

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class PrescriptionActivity extends AppCompatActivity {
 
     private ListView listView_pres;
-    private String currentID;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class PrescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_prescription);
 
         Intent intent = getIntent();
-        currentID = intent.getExtras().get("id").toString();
+        userID = intent.getExtras().get("id").toString();
 
         listView_pres = (ListView) findViewById(R.id.listView_pres);
 
@@ -34,7 +34,7 @@ public class PrescriptionActivity extends AppCompatActivity {
                 "JOIN reception on reception._id = prescription.fk_reception_id " +
                 "JOIN doctor on doctor._id = reception.fk_doctor_id " +
                 "WHERE reception.fk_user_id = ?;";
-        Cursor cursor = db.rawQuery(query,new String[]{currentID});
+        Cursor cursor = db.rawQuery(query,new String[]{userID});
 
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < cursor.getCount(); i++) {
