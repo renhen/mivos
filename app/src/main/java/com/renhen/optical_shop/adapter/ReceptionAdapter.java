@@ -54,7 +54,7 @@ public class ReceptionAdapter extends ArrayAdapter<Integer> {
 
 
     private String parseData(String date) {
-        SimpleDateFormat spf=new SimpleDateFormat("yyyyMMddhhmmss");
+        SimpleDateFormat spf=new SimpleDateFormat("yyyyMMddHHmmss");
         Date newDate= null;
         try {
             newDate = spf.parse(date);

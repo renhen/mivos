@@ -121,16 +121,23 @@ public class AddReceptionActivity extends AppCompatActivity {
 
                     String item = (String) parent.getItemAtPosition(position);
                     TextView label_address = (TextView) findViewById(R.id.label_address_addReception);
+                    TextView label_avg = (TextView) findViewById(R.id.label_avgReception);
 
                     if (!item.equals("Нет врачей")) {
                         Cursor cursor = db.rawQuery("SELECT address FROM DOCTOR " +
                                 "JOIN optical_shop on optical_shop._id = fk_optical_shop_id " +
                                 "WHERE FIO = ?;", new String[]{item});
                         cursor.moveToNext();
+                        Cursor cursor2 = db.rawQuery("SELECT count(`datetime`)/7.0 as count from reception " +
+                                "JOIN doctor on fk_doctor_id = doctor._id " +
+                                "WHERE (FIO = ? and `datetime` between STRFTIME(\"%Y%m%d%H%M%S\",\"now\") and STRFTIME(\"%Y%m%d%H%M%S\",\"now\") + 7000000);",new String[]{item});
+                        cursor2.moveToNext();
 
                         label_address.setText("Адрес салона оптики: " + cursor.getString(cursor.getColumnIndex(OpticalShopContract.OpticalShopEntry.COLUMN_ADDRESS)));
+                        label_avg.setText("Нагрузка врача на неделю (приемов в день): " + cursor2.getString(cursor2.getColumnIndex("count")));
                     } else {
                         label_address.setText("Адрес салона оптики: ");
+                        label_avg.setText("Нагрузка врача на неделю (приемов в день): ");
                     }
                 }
 
@@ -210,7 +217,7 @@ public class AddReceptionActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        spf= new SimpleDateFormat("yyyyMMddhhmmss");
+        spf= new SimpleDateFormat("yyyyMMddHHmmss");
         return spf.format(newDate);
     }
 
@@ -218,7 +225,7 @@ public class AddReceptionActivity extends AppCompatActivity {
         // Текущее время
         Date currentDate = new Date();
         // Форматирование времени как "день.месяц.год"
-        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         return dateFormat.format(currentDate);
     }
 }

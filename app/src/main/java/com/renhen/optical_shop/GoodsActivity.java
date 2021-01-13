@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.renhen.optical_shop.adapter.GoodsAdapter;
 import com.renhen.optical_shop.data.OpticalShopContract;
@@ -79,6 +80,13 @@ public class GoodsActivity extends AppCompatActivity {
 
                         GoodsAdapter adapter = new GoodsAdapter(GoodsActivity.this, R.layout.goods_item, list, cursor, getApplicationContext().getAssets());
                         listView_Goods.setAdapter(adapter);
+
+                        Cursor cursor1 = db.rawQuery("SELECT SUM(count) as sum FROM optical_shop\n" +
+                                "JOIN there_is on fk_optical_shop_id = optical_shop._id\n" +
+                                "WHERE address = ?;", new String[]{item});
+                        cursor1.moveToNext();
+                        TextView label_count = (TextView) findViewById(R.id.label_count);
+                        label_count.setText("Количество товаров в данном салоне оптики: " + cursor1.getString(cursor1.getColumnIndex("sum")));
 
                     }
 

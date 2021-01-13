@@ -27,6 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="8dp" />
 
+    <TextView
+        android:id="@+id/label_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Количество товаров в данном салоне оптики: " />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
     <ListView
         android:id="@+id/listView_goods"
         android:layout_width="match_parent"

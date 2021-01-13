@@ -87,6 +87,16 @@
             android:layout_width="match_parent"
             android:layout_height="8dp" />
 
+        <TextView
+            android:id="@+id/label_avgReception"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Нагрузка в неделю:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
         <Button
             android:id="@+id/button_addReception_2"
             android:layout_width="match_parent"
